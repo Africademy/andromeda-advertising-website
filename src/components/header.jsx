@@ -27,6 +27,16 @@ class Header extends Component {
                         <li className="hero__header__nav__btn__item">Help</li>
                     </button>
                 </nav>
+                <button className="hero__header__burger">
+                    <svg width={30} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>menu</title>
+                        <g fill="none">
+                            <path d="M3 5h18" stroke="#000000" strokeLinecap="round" strokeWidth="2"/>
+                            <path d="M3 12h18" stroke="#000000" strokeLinecap="round" strokeWidth="2"/>
+                            <path d="M3 19h18" stroke="#000000" strokeLinecap="round" strokeWidth="2"/>
+                        </g>
+                    </svg>
+                </button>
                 <button className="hero__header__btn">Login</button>
             </header>
         )
