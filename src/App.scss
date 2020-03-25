@@ -101,13 +101,14 @@ $red: #FE7070;
     &__text {
       width: 55%;
       height: 100%;
-      padding: 25vh 0vh 25vh 25vh;
+      padding: 25vh 0vh 25vh 0vh;
       display: flex;
       flex-flow: column;
       -webkit-flex-flow: column;
       justify-content: space-between;
-      overflow: auto;
+      overflow: hidden;
       position: absolute;
+      left: 25vh;
 
       &__title {
         font-size: 60pt;

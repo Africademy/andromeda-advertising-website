@@ -4,6 +4,23 @@ import heroImage from "../images/hero-image.jpeg"
 import anime from "animejs/lib/anime.es";
 
 class Hero extends Component {
+    componentDidMount() {
+        const timeline = anime.timeline({
+            easing: "cubicBezier(.5, .05, .1, .3)",
+            duration: 1500
+        })
+        timeline.add({
+            targets: ".hero__welcome__text__title",
+            translateX: ["-200px", 0],
+            duration: 1000,
+        })
+            .add({
+            targets: ".hero__welcome__text__description",
+            tranlateX: ["-200px", 0],
+            duration: 500,
+        })
+    }
+
     render() {
         return (
             <main className="hero">
