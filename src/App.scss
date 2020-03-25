@@ -320,7 +320,7 @@ $red: #FE7070;
 
 .services {
   width: 100vw;
-  height: 150vh;
+  height: 200vh;
   display: flex;
   flex-flow: column;
   -webkit-flex-flow: column;
@@ -402,4 +402,279 @@ $red: #FE7070;
     }
   }
 
+  &__action {
+    width: 80%;
+    margin: 10vw 0vw 0vw;
+    height: 30vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    -webkit-flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      font-size: 24pt;
+      font-weight: 600;
+    }
+    &__description {
+      font-size: 14pt;
+      color: $navy;
+      width: 60%;
+      line-height: 24pt;
+    }
+    &__btn {
+      @include styleBtn;
+      border: none;
+      background-color: $blue;
+      color: #fff;
+      font-size: 14pt;
+      height: 70px;
+      width: 10vw;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      left: -35px;
+      cursor: pointer;
+      border-radius: 5px 0px 0px 5px;
+
+      &:focus {
+        box-shadow: 0 xp 10px 45px -10px #000;
+      }
+
+      span {
+        height: inherit;
+        width: 70px;
+        background-color: $blue;
+        position: absolute;
+        right: -71px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+  }
+}
+
+.testimonials {
+  width: 100vw;
+  padding: 10vw 5vw 5vw;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  -webkit-flex-flow: column;
+
+  &__element {
+    display: flex;
+    width: 70%;
+    height: 70vh;
+    justify-content: space-between;
+    margin: 0vw 0vw 5vw;
+    &:nth-child(even) {
+      flex-flow: row-reverse;
+    }
+    &__image {
+      width: 30vw;
+      height: inherit;
+      overflow: hidden;
+      img {
+        width: 100%;
+        object-fit: cover;
+        -o-object-fit: cover;
+        object-position: right center;
+      }
+    }
+    &__content {
+      text-align: left;
+      width: 43%;
+      height: 80%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      -webkit-flex-flow: column;
+      padding: 3vw 0vw 0vw;
+      &__title {
+        font-size: 24pt;
+      }
+      &__description {
+        color: $navy;
+        font-size: 13pt;
+        line-height: 22pt;
+      }
+    }
+  }
+}
+
+.excellence {
+  width: 100vw;
+  height: 150vh;
+  padding: 0vw 10vw 0vw;
+
+  display: flex;
+  flex-flow: column;
+  -webkit-flex-flow: column;
+
+  &__title {
+    font-size: 38pt;
+    color: $black;
+  }
+  &__description {
+    width: 35%;
+    font-size: 14pt;
+    color: $navy;
+    margin: 4vw 0vw 0vw;
+
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: "";
+      display: block;
+      height: 80%;
+      width: 8px;
+      background-color: $black;
+      margin: 0px 40px 0px 0px;
+    }
+  }
+  &__numbers {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: flex-end;
+    &__first-column {
+      width: 20vw;
+      height: auto;
+      display: flex;
+      flex-flow: column;
+      -webkit-flex-flow: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin: 0vw 5vw 0vw 0vw;
+
+      &__purple {
+        width: 20vw;
+        height: 20vw;
+        background-color: #5f56b2;
+        margin: 0vw 0vw 5vw;
+        padding: 3vw;
+        color: #fff;
+
+        display: flex;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        justify-content: space-between;
+        &__main {
+          height: 30%;
+          display: flex;
+          flex-flow: column;
+          -webkit-flex-flow: column;
+          justify-content: space-between;
+          &__title {
+            font-weight: 500;
+            font-size: 16pt;
+          }
+        }
+
+        &__value {
+          font-size: 50pt;
+        }
+      }
+      &__blue {
+        width: 30vw;
+        height: 20vw;
+        background-color: #3573aa;
+        padding: 3vw;
+        color: #fff;
+
+        display: flex;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        justify-content: space-between;
+        &__main {
+          height: 30%;
+          display: flex;
+          flex-flow: column;
+          -webkit-flex-flow: column;
+          justify-content: space-between;
+          &__title {
+            font-weight: 500;
+            font-size: 16pt;
+          }
+        }
+
+        &__value {
+          font-size: 50pt;
+        }
+
+      }
+    }
+    &__last-column {
+      width: 20vw;
+      height: auto;
+      display: flex;
+      flex-flow: column;
+      -webkit-flex-flow: column;
+      align-self: flex-end;
+      justify-self: flex-start;
+      &__navy {
+        width: 20vw;
+        height: 20vw;
+        background-color: $navy;
+        margin: 0vw 0vw 5vw;
+        padding: 3vw;
+        color: #fff;
+
+        display: flex;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        justify-content: space-between;
+        &__main {
+          height: 30%;
+          display: flex;
+          flex-flow: column;
+          -webkit-flex-flow: column;
+          justify-content: space-between;
+          &__title {
+            font-weight: 500;
+            font-size: 16pt;
+          }
+        }
+
+        &__value {
+          font-size: 50pt;
+        }
+      }
+      &__red {
+        width: 20vw;
+        height: 30vw;
+        background-color: #ee7975;
+        padding: 13vw 3vw 3vw;
+        color: #fff;
+
+        display: flex;
+        flex-flow: column;
+        -webkit-flex-flow: column;
+        justify-content: space-between;
+
+        &__main {
+          height: 30%;
+          display: flex;
+          flex-flow: column;
+          -webkit-flex-flow: column;
+          justify-content: space-between;
+          &__title {
+            font-weight: 500;
+            font-size: 16pt;
+          }
+        }
+
+        &__value {
+          font-size: 50pt;
+        }
+      }
+    }
+  }
 }

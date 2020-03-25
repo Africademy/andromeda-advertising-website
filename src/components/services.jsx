@@ -25,7 +25,14 @@ class Services extends Component {
                 <section className="services__action">
                 <h2 className="services__action__title">Create your campaign with few steps</h2>
                 <p className="services__action__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam semper dui eget sem rhoncus, nec rutrum tortor aliquam.</p>
-                <button className="services__action__btn">Get started<span></span></button>
+                <button className="services__action__btn">Get started<span>
+                    <svg width={30} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	<title>arrow right</title>
+	<g fill="none">
+		<path d="M6 12h12.5m0 0l-6-6m6 6l-6 6" stroke="#fff" strokeLinecap="round" strokeWidth="2"/>
+	</g>
+</svg>
+                </span></button>
                 </section>
             </main>
         )

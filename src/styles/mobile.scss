@@ -7,6 +7,8 @@
   font-family: "Poppins", sans-serif;
 }
 
+$black: #2C2B38;
+$navy: #3B3F5F;
 
 @media screen and (max-width: 375px) {
   .hero {
@@ -156,6 +158,121 @@
               border-radius: 0px 5px 5px 0px;
             }
           }
+        }
+      }
+    }
+  }
+
+  .services {
+    height: auto;
+    padding: 0;
+    &__title {
+      text-align: center;
+    }
+    &__list {
+      display: flex;
+      flex-flow: column;
+
+      &__item {
+        width: 100%;
+        height: 70vh;
+        padding: 20vw 5vw 20vw;
+        border-bottom: 1px solid rgba($black, 0.5);
+
+      }
+    }
+    &__action {
+      width: 100%;
+      padding: 5vw;
+      height: 60vh;
+      &__description {
+        width: 100%;
+        font-size: 16pt;
+      }
+      &__btn {
+        width: 80%;
+        height: 80px;
+        font-size: 18pt;
+
+      }
+    }
+  }
+  .testimonials {
+    width: 100vw;
+    height: auto;
+    padding: 10vw 0vw 0vw;
+    &__element {
+      flex-flow: column;
+      height: inherit;
+      width: 100%;
+
+      &__image {
+        width: 100%;
+      }
+      &__content {
+        width: 100%;
+        padding: 0vw 5vw 0vw;
+        &__title {
+          font-size: 30pt;
+        }
+        &__description {
+          font-size: 16pt;
+        }
+      }
+    }
+  }
+  .excellence {
+    width: 100vw;
+    height: 190vh;
+    padding: 15vw 5vw 0vw;
+    flex-flow: column;
+    -webkit-flex-flow: column;
+
+    &__description {
+      width: 100%;
+      font-size: 16pt;
+
+      &:before {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 8px;
+        margin: 0px 40px 0px 0px;
+      }
+    }
+    &__numbers {
+      flex-flow: column;
+      -webkit-flex-flow: column;
+      height: 250vh;
+      justify-content: space-between;
+      &__first-column {
+        width: 100%;
+        margin: 10vw 0vw 0vw;
+        &__purple {
+          width: 90vw;
+          height: 90vw;
+          padding: 10vw;
+        }
+        &__blue {
+          width: 100%;
+          height: 70vw;
+          padding: 10vw;
+          margin: 0vw 0vw 5vw;
+        }
+      }
+      &__last-column {
+        width: 100%;
+        align-items: flex-end;
+        &__navy {
+          width: 90vw;
+          height: 90vw;
+          padding: 10vw;
+        }
+        &__red {
+          width: 90vw;
+          height: 100vw;
+          padding: 40vw 10vw 10vw;
+          margin: 0vw 0vw 5vw;
         }
       }
     }
