@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Header from "../components/header"
 import heroImage from "../images/hero-image.jpeg"
+import anime from "animejs/lib/anime.es";
 
 class Hero extends Component {
     render() {

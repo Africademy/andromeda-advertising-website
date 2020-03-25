@@ -1,6 +1,21 @@
 import  React, {Component} from "react";
 
 class Header extends Component {
+    componentDidMount() {
+        const header = document.querySelector(".hero__header");
+        const loginBtn = document.querySelector(".hero__header__btn");
+        window.addEventListener("scroll", () => {
+            if(window.scrollY > 100) {
+                header.classList.add("fillHeader")
+                loginBtn.classList.add("changeBtn")
+            } else {
+                header.classList.remove("fillHeader")
+                loginBtn.classList.remove("changeBtn")
+            }
+        })
+
+    }
+
     render() {
         return (
             <header className="hero__header">

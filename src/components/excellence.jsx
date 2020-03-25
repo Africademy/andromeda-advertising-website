@@ -40,6 +40,19 @@ class Excellence extends Component {
                         </div>
                     </div>
                 </section>
+
+                <section className="excellence__action">
+                    <h2 className="excellence__action__title">Your growth is Our growth</h2>
+                    <p className="excellence__action__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam semper dui eget sem rhoncus, nec rutrum tortor aliquam.</p>
+                    <button className="excellence__action__btn">Create campaign<span>
+                        <svg width={30} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	<title>arrow right</title>
+	<g fill="none">
+		<path d="M6 12h12.5m0 0l-6-6m6 6l-6 6" stroke="#fff" strokeLinecap="round" strokeWidth="2"/>
+	</g>
+</svg>
+                    </span></button>
+                </section>
             </main>
         )
     }

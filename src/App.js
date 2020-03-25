@@ -5,6 +5,8 @@ import AboutUs from "./components/aboutus"
 import Services from "./components/services"
 import Testimonials from "./components/testimonials"
 import Excellence from "./components/excellence";
+import Contact from "./components/contact";
+import Footer from "./components/footer";
 
 import './App.scss';
 import "./styles/mobile.scss"
@@ -19,6 +21,8 @@ function App() {
       <Services />
       <Testimonials />
       <Excellence />
+      <Contact />
+      <Footer />
     </>
   );
 }
