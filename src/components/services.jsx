@@ -6,6 +6,9 @@ import EbookAds from "./services/ebook";
 import NotificationAds from "./services/notification";
 import GameAds from "./services/game";
 
+import gsap, {CSSPlugin} from "gsap";
+gsap.registerPlugin(CSSPlugin);
+
 class Services extends Component {
     render() {
         return (

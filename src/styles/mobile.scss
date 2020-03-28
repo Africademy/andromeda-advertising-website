@@ -45,9 +45,12 @@ $navy: #3B3F5F;
         height: 70vh;
       }
       &__text {
-        width: 100%;
+        width: 85%;
         height: 65%;
-        padding: 20vh 4vh 0vh;
+        padding: 20vh 0vh 0vh;
+        left: 4vh;
+        right: 4vh;
+        bottom: 34vh;
 
         &__title {
           font-size: 35pt;

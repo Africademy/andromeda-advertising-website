@@ -1,4 +1,5 @@
 import  React, {Component} from "react";
+import {Link} from "react-router-dom";
 
 class Header extends Component {
     componentDidMount() {
@@ -13,7 +14,6 @@ class Header extends Component {
                 loginBtn.classList.remove("changeBtn")
             }
         })
-
     }
 
     render() {
@@ -52,7 +52,9 @@ class Header extends Component {
                         </g>
                     </svg>
                 </button>
-                <button className="hero__header__btn">Login</button>
+                <Link to="/login">
+                    <button className="hero__header__btn">Login</button>
+                </Link>
             </header>
         )
     }

@@ -4,6 +4,17 @@ import aboutUs2 from "../images/aboutus-2.jpeg";
 import aboutUs3 from "../images/aboutus-3.jpeg";
 
 class AboutUs extends Component {
+    componentDidMount() {
+        const aboutusImageOne = document.querySelector(".aboutus__element__image");
+        const aboutusImageTwo = document.querySelector(".aboutus__element__image--second");
+        const aboutusImageThree = document.querySelector(".aboutus__element__image--third");
+        document.addEventListener("mousemove", e => {
+            aboutusImageOne.style.transform = `translate(${e.pageX / 100}px, ${e.pageY / 100}px)`;
+            aboutusImageTwo.style.transform = `translate(${e.pageX / 100}px, ${e.pageY / 100}px)`;
+            aboutusImageThree.style.transform = `translate(${e.pageX / 100}px, ${e.pageY / 100}px)`;
+        })
+    }
+
     render() {
         return (
             <main className="aboutus">

@@ -5,19 +5,38 @@ import anime from "animejs/lib/anime.es";
 
 class Hero extends Component {
     componentDidMount() {
-        const timeline = anime.timeline({
-            easing: "cubicBezier(.5, .05, .1, .3)",
-            duration: 1500
-        })
-        timeline.add({
+        //anime main title
+        anime({
             targets: ".hero__welcome__text__title",
             translateX: ["-200px", 0],
+            opacity: [0, 1],
             duration: 1000,
+            delay: 500,
+            easing: "cubicBezier(.5, .05, .1, .3)",
         })
-            .add({
+        //anime photo
+        anime({
+            targets: ".hero__welcome__image__anime",
+            height: ["100%", "0%"],
+            duration: 1000,
+            easing: 'linear',
+        })
+        //anime main description
+        anime({
             targets: ".hero__welcome__text__description",
-            tranlateX: ["-200px", 0],
+            translateX: ["-150px", 0],
+            opacity: [0, 1],
+            duration: 800,
+            delay: 1000,
+            easing: "cubicBezier(.5, .05, .1, .3)",
+        })
+        //anime btn in main
+        anime({
+            targets: ".hero__welcome__text__btn",
+            translateY: ["100px", 0],
             duration: 500,
+            delay: 1600,
+            easing: "cubicBezier(.5, .05, .1, .3)",
         })
     }
 
@@ -25,7 +44,6 @@ class Hero extends Component {
         return (
             <main className="hero">
                 <Header />
-
                 <section className="hero__welcome">
                     <section className="hero__welcome__text">
                         <h1 className="hero__welcome__text__title">Advertising your brands</h1>
@@ -44,7 +62,8 @@ class Hero extends Component {
                     </section>
                     <section className="hero__welcome__empty"></section>
                     <section className="hero__welcome__image">
-                        <img src={heroImage} alt="hero-image" />
+                        <div className="hero__welcome__image__anime"></div>
+                        <img src={heroImage} alt="hero" />
                     </section>
                 </section>
             </main>
