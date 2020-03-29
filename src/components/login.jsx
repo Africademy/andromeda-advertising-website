@@ -10,19 +10,59 @@ class Login extends Component {
     passwordType: "password",
     showPassword: false,
     formFilled: false,
+    colors: {
+      default: "#9c9c9c",
+      weak: "#ff0043",
+      average: "#ffffff",
+      strong: '#000',
+    }
   };
   componentDidMount() {
+    //anime illustration enter
     anime({
       targets: ".login__left svg",
       translateX: ["-30vw", 0],
       opacity: [0, 1],
-      duration: 1000,
+      duration: 700,
       easing: 'cubicBezier(.5, .05, .1, .3)',
     });
+    anime({
+      targets: "#Graduation_cap",
+      translateY: ["-20vw", 0],
+      opacity: [0, 1],
+      duration: 1300,
+      easing: 'cubicBezier(.5, .05, .1, .3)',
+    })
+    anime({
+      targets: '#Speech_Bubbles',
+      translateY: ["-20vw", 0],
+      opacity: [0, 1],
+      delay: 300,
+      duration: 1300,
+      easing: 'cubicBezier(.5, .05, .1, .3)',
+    })
+
+    //anime form enter
+    anime({
+      targets: ".login__right",
+      translateX: ["50vw", 0],
+      opacity: [0, 1],
+      delay: 700,
+      duration: 800,
+      easing: 'cubicBezier(.5, .05, .1, .3)',
+    })
   }
 
   handleInput = (e) => {
     this.setState({ [e.target.id]: e.target.value });
+    if(e.target.id === 'password') {
+      const length = e.target.value.length;
+      const defaultColor = this.state.colors.default;
+      // to finish: change color based on password length
+      if(this.state.password.length > 2) {
+        this.setState({defaultColor: "#ff0043"})
+      }
+    }
   };
   handleVisibility = () => {
     this.state.showPassword === false
@@ -482,7 +522,7 @@ class Login extends Component {
                   d="M237.7,251.5l19.23-11.1c.6-.34,1.08-.1,1.08.55a2.32,2.32,0,0,1-1.08,1.8l-19.23,11.1c-.6.34-1.08.1-1.08-.55A2.32,2.32,0,0,1,237.7,251.5Z"
                   fill="#e0e0e0"
                 />
-                <g clip-path="url(#clip-path)">
+                <g clipPath="url(#clip-path)">
                   <path
                     d="M142.4,84.65c-11.21,6.33-20.31,22.08-20.31,35.18s9.1,18.48,20.31,12,20.31-22.23,20.31-35.18S153.62,78.33,142.4,84.65Z"
                     fill="#fafafa"
@@ -906,7 +946,7 @@ class Login extends Component {
                 onChange={(e) => this.handleInput(e)}
                 onKeyDown={(e) => this.validate(e)}
               />
-              <div className="login__right__form__input__strenght"></div>
+              <div style={{backgroundColor: this.state.colors.default}} className="login__right__form__input__strenght"></div>
               <div className="login__right__form__input__checkbox">
                 <input
                   type="checkbox"
