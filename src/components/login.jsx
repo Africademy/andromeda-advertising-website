@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import LoginForm from "../components/loginForm";
+import LoggedIn from "../components/loggedIn";
 import anime from "animejs/lib/anime.es";
 import "../styles/login.scss";
-import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -10,12 +11,9 @@ class Login extends Component {
     passwordType: "password",
     showPassword: false,
     formFilled: false,
-    colors: {
-      default: "#9c9c9c",
-      weak: "#ff0043",
-      average: "#ffffff",
-      strong: '#000',
-    }
+    default: "#9c9c9c",
+    length: "0%",
+    loggedIn: false,
   };
   componentDidMount() {
     //anime illustration enter
@@ -24,23 +22,23 @@ class Login extends Component {
       translateX: ["-30vw", 0],
       opacity: [0, 1],
       duration: 700,
-      easing: 'cubicBezier(.5, .05, .1, .3)',
+      easing: "cubicBezier(.5, .05, .1, .3)",
     });
     anime({
       targets: "#Graduation_cap",
       translateY: ["-20vw", 0],
       opacity: [0, 1],
       duration: 1300,
-      easing: 'cubicBezier(.5, .05, .1, .3)',
-    })
+      easing: "cubicBezier(.5, .05, .1, .3)",
+    });
     anime({
-      targets: '#Speech_Bubbles',
+      targets: "#Speech_Bubbles",
       translateY: ["-20vw", 0],
       opacity: [0, 1],
       delay: 300,
       duration: 1300,
-      easing: 'cubicBezier(.5, .05, .1, .3)',
-    })
+      easing: "cubicBezier(.5, .05, .1, .3)",
+    });
 
     //anime form enter
     anime({
@@ -49,20 +47,33 @@ class Login extends Component {
       opacity: [0, 1],
       delay: 700,
       duration: 800,
-      easing: 'cubicBezier(.5, .05, .1, .3)',
-    })
+      easing: "cubicBezier(.5, .05, .1, .3)",
+    });
   }
 
   handleInput = (e) => {
-    this.setState({ [e.target.id]: e.target.value });
-    if(e.target.id === 'password') {
-      const length = e.target.value.length;
-      const defaultColor = this.state.colors.default;
-      // to finish: change color based on password length
-      if(this.state.password.length > 2) {
-        this.setState({defaultColor: "#ff0043"})
+    if (e.target.id === "password") {
+      switch (e.target.value.length) {
+        case 0:
+          this.setState({ length: 0 });
+          break;
+        case 4 || 5:
+          this.setState({ default: "#ff0043", length: "30%" });
+          break;
+        case 6 || 7:
+          this.setState({ default: "#FF8419", length: "60%" });
+          break;
+        case 8 || 9:
+          this.setState({ default: "#0DFF4A", length: "100%" });
+          break;
+        default:
       }
     }
+
+    this.setState({ [e.target.id]: e.target.value });
+  };
+  formSubmit = (e) => {
+    e.preventDefault();
   };
   handleVisibility = () => {
     this.state.showPassword === false
@@ -76,8 +87,11 @@ class Login extends Component {
         });
   };
   validate = (e) => {
-    if (e.target.value !== "") {
-      this.setState({ formFilled: !this.state.formFilled });
+    const { email, password } = this.state;
+    if (email !== "" && password.length >= 7) {
+      this.setState({ formFilled: true });
+    } else {
+      this.setState({ formFilled: false });
     }
   };
   render() {
@@ -917,53 +931,23 @@ class Login extends Component {
           </svg>
         </section>
         <section className="login__right">
-          <Link to="/">
-            <button className="login__right__goback">Go back</button>
-          </Link>
-          <form className="login__right__form">
-            <h1 className="login__right__form__title">
-              Become
-              <br />
-              our client
-            </h1>
-            <section className="login__right__form__input">
-              <label htmlFor="email">E-mail address</label>
-              <input
-                placeholder="e.g. john@mail.com"
-                type="text"
-                id="email"
-                value={this.state.email}
-                onChange={(e) => this.handleInput(e)}
-                onKeyDown={(e) => this.validate(e)}
-              />
-            </section>
-            <section className="login__right__form__input">
-              <label htmlFor="password">Password</label>
-              <input
-                value={this.state.password}
-                type={this.state.passwordType}
-                id="password"
-                onChange={(e) => this.handleInput(e)}
-                onKeyDown={(e) => this.validate(e)}
-              />
-              <div style={{backgroundColor: this.state.colors.default}} className="login__right__form__input__strenght"></div>
-              <div className="login__right__form__input__checkbox">
-                <input
-                  type="checkbox"
-                  onChange={this.handleVisibility}
-                  checked={this.state.showPassword}
-                />
-                <label>Show password</label>
-              </div>
-            </section>
-            {this.state.formFilled === false ? (
-              <button className="login__right__form__btn--notactive">
-                Login
-              </button>
-            ) : (
-              <button className="login__right__form__btn">Login</button>
-            )}
-          </form>
+          {this.state.loggedIn === false ? (
+            <LoginForm
+              formSubmit={this.formSubmit}
+              validate={this.validate}
+              handleVisibility={this.handleVisibility}
+              handleInput={this.handleInput}
+              email={this.state.email}
+              password={this.state.password}
+              passwordType={this.state.passwordType}
+              showPassword={this.state.showPassword}
+              formFilled={this.state.formFilled}
+              defaultColor={this.state.default}
+              length={this.state.length}
+            />
+          ) : (
+            <LoggedIn />
+          )}
         </section>
       </main>
     );
