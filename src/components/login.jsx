@@ -17,6 +17,7 @@ class Login extends Component {
   };
   componentDidMount() {
     //anime illustration enter
+    const cap = document.querySelector("#Graduation_cap");
     anime({
       targets: ".login__left svg",
       translateX: ["-30vw", 0],
@@ -26,20 +27,19 @@ class Login extends Component {
     });
     anime({
       targets: "#Graduation_cap",
-      translateY: ["-20vw", 0],
-      opacity: [0, 1],
-      duration: 1300,
+      translateY: 10,
+      direction: 'alternate',
+      loop: true,
       easing: "cubicBezier(.5, .05, .1, .3)",
     });
     anime({
       targets: "#Speech_Bubbles",
-      translateY: ["-20vw", 0],
-      opacity: [0, 1],
+      translateY: 15,
+      loop: true,
+      direction: 'alternate',
       delay: 300,
-      duration: 1300,
       easing: "cubicBezier(.5, .05, .1, .3)",
     });
-
     //anime form enter
     anime({
       targets: ".login__right",
@@ -74,6 +74,7 @@ class Login extends Component {
   };
   formSubmit = (e) => {
     e.preventDefault();
+    this.setState({loggedIn: true});
   };
   handleVisibility = () => {
     this.state.showPassword === false

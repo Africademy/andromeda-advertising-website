@@ -25,6 +25,11 @@ class Header extends Component {
         <nav className="hero__header__nav">
           <button className="hero__header__nav__btn">
             <li className="hero__header__nav__btn__item">Advertisers</li>
+            <ul className="hero__header__nav__btn__item__dropdown">
+              <li>Our team</li>
+              <li>Best advertisers</li>
+              <li>Our recommendations</li>
+            </ul>
           </button>
           <button className="hero__header__nav__btn">
             <li className="hero__header__nav__btn__item">Publishers</li>
@@ -38,9 +43,11 @@ class Header extends Component {
           <button className="hero__header__nav__btn">
             <li className="hero__header__nav__btn__item">Resources</li>
           </button>
-          <button className="hero__header__nav__btn">
-            <li className="hero__header__nav__btn__item">Help</li>
-          </button>
+          <Link to='/help' >
+            <button className="hero__header__nav__btn">
+              <li className="hero__header__nav__btn__item">Help</li>
+            </button>
+          </Link>
         </nav>
         <button className="hero__header__burger">
           <svg

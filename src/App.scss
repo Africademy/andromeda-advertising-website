@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,10 +9,10 @@
   font-family: "Poppins", sans-serif;
 }
 
-$blue: #3663F5;
-$black: #2C2B38;
-$navy: #3B3F5F;
-$red: #FE7070;
+$blue: #3663f5;
+$black: #2c2b38;
+$navy: #3b3f5f;
+$red: #fe7070;
 @mixin styleBtn() {
   border: none;
   &:focus {
@@ -39,7 +41,7 @@ $red: #FE7070;
     align-items: center;
     position: fixed;
     z-index: 10;
-    @include transition(.3s);
+    @include transition(0.3s);
 
     &__logo {
       &__name {
@@ -51,29 +53,83 @@ $red: #FE7070;
       display: flex;
       justify-content: space-between;
       width: 50%;
+      height: 100%;
       &__btn {
         border: none;
         background: none;
         cursor: pointer;
-        @include transition(.3s);
+        height: 100%;
+        @include transition(0.3s);
         &:after {
           content: "";
           display: block;
           width: 0%;
           height: 2px;
           background-color: $navy;
-          @include transition(.3s);
+          @include transition(0.3s);
         }
         &:hover {
           &:after {
-            @include transition(.3s);
+            @include transition(0.3s);
             width: 100%;
           }
+        }
+        &:hover > ul {
+          display: block;
         }
 
         &__item {
           list-style-type: none;
           font-size: 12pt;
+          position: relative;
+
+          &__dropdown {
+            display: none;
+            position: absolute;
+            top: 4vw;
+            text-align: left;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px 0px 15px;
+            box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+              0 2.1px 10px rgba(0, 0, 0, 0.015),
+              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+              0 17px 80px rgba(0, 0, 0, 0.03);
+            -moz-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+              0 2.1px 10px rgba(0, 0, 0, 0.015),
+              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+              0 17px 80px rgba(0, 0, 0, 0.03);
+            -o-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+              0 2.1px 10px rgba(0, 0, 0, 0.015),
+              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+              0 17px 80px rgba(0, 0, 0, 0.03);
+            -webkit-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+              0 2.1px 10px rgba(0, 0, 0, 0.015),
+              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+              0 17px 80px rgba(0, 0, 0, 0.03);
+
+            li {
+              list-style-type: none;
+              line-height: 28pt;
+              font-size: 12pt;
+              padding: 5px 15px 5px;
+              @include transition(0.3s);
+              &:hover {
+                color: $blue;
+                font-weight: 500;
+                transform: translateX(5px);
+                @include transition(0.3s);
+              }
+            }
+          }
         }
       }
     }
@@ -86,10 +142,10 @@ $red: #FE7070;
       padding: 15px 35px 15px;
       border-radius: 5px;
       cursor: pointer;
-      @include transition(.3s);
+      @include transition(0.3s);
 
       &:hover {
-        @include transition(.3s);
+        @include transition(0.3s);
         background-color: $navy;
         color: #fff;
       }
@@ -151,7 +207,7 @@ $red: #FE7070;
           outline: none;
         }
         &:hover > span svg {
-          @include transition(.3s);
+          @include transition(0.3s);
           -moz-transform: translateX(5px);
           -ms-transform: translateX(5px);
           -o-transform: translateX(5px);
@@ -169,35 +225,35 @@ $red: #FE7070;
           border-radius: 0px 5px 5px 0px;
           overflow: hidden;
           svg {
-            @include transition(.3s);
+            @include transition(0.3s);
           }
         }
       }
     }
 
-      &__image {
-        width: 55%;
-        height: 90%;
-        overflow: hidden;
-        display: flex;
-        justify-self: flex-end;
-        position: relative;
-        z-index: -1;
-        &__anime {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          background-color: #fff;
-        }
-
-        img {
-          object-fit: cover;
-          -o-object-fit: cover;
-          -o-object-position: 0%;
-          object-position: 0%;
-          width: 100%;
-        }
+    &__image {
+      width: 55%;
+      height: 90%;
+      overflow: hidden;
+      display: flex;
+      justify-self: flex-end;
+      position: relative;
+      z-index: -1;
+      &__anime {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #fff;
       }
+
+      img {
+        object-fit: cover;
+        -o-object-fit: cover;
+        -o-object-position: 0%;
+        object-position: 0%;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -224,11 +280,11 @@ $red: #FE7070;
 
       svg {
         opacity: 0.3;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
           opacity: 1;
-          transition: all .3s ease-in-out;
+          transition: all 0.3s ease-in-out;
           transform: scale(1.05);
         }
       }
@@ -321,14 +377,13 @@ $red: #FE7070;
         border-radius: 5px 0px 0px 5px;
         cursor: pointer;
 
-          &:hover > span svg {
-            @include transition(.3s);
-            -moz-transform: translateX(5px);
-            -ms-transform: translateX(5px);
-            -o-transform: translateX(5px);
-            transform: translateX(5px);
-          }
-
+        &:hover > span svg {
+          @include transition(0.3s);
+          -moz-transform: translateX(5px);
+          -ms-transform: translateX(5px);
+          -o-transform: translateX(5px);
+          transform: translateX(5px);
+        }
 
         &:focus {
           box-shadow: 0 xp 10px 45px -10px #000;
@@ -345,7 +400,7 @@ $red: #FE7070;
           align-items: center;
           border-radius: 0px 5px 5px 0px;
           svg {
-            @include transition(.3s);
+            @include transition(0.3s);
           }
         }
 
@@ -364,7 +419,7 @@ $red: #FE7070;
           cursor: pointer;
           border-radius: 5px 0px 0px 5px;
           &:hover > span svg {
-            @include transition(.3s);
+            @include transition(0.3s);
             -moz-transform: translateX(5px);
             -ms-transform: translateX(5px);
             -o-transform: translateX(5px);
@@ -382,7 +437,7 @@ $red: #FE7070;
             align-items: center;
             border-radius: 0px 5px 5px 0px;
             svg {
-              @include transition(.3s);
+              @include transition(0.3s);
             }
           }
         }
@@ -434,7 +489,6 @@ $red: #FE7070;
       }
       &:hover > &__btn {
         visibility: visible;
-
       }
 
       &__title {
@@ -514,7 +568,7 @@ $red: #FE7070;
       cursor: pointer;
       border-radius: 5px 0px 0px 5px;
       &:hover > span svg {
-        @include transition(.3s);
+        @include transition(0.3s);
         -moz-transform: translateX(5px);
         -ms-transform: translateX(5px);
         -o-transform: translateX(5px);
@@ -536,7 +590,7 @@ $red: #FE7070;
         align-items: center;
         border-radius: 0px 5px 5px 0px;
         svg {
-          @include transition(.3s);
+          @include transition(0.3s);
         }
       }
     }
@@ -693,7 +747,6 @@ $red: #FE7070;
         &__value {
           font-size: 50pt;
         }
-
       }
     }
     &__last-column {
@@ -806,6 +859,13 @@ $red: #FE7070;
       left: -35px;
       cursor: pointer;
       border-radius: 5px 0px 0px 5px;
+      &:hover > span svg {
+        @include transition(0.3s);
+        -moz-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        -o-transform: translateX(5px);
+        transform: translateX(5px);
+      }
 
       &:focus {
         box-shadow: 0 xp 10px 45px -10px #000;
@@ -821,6 +881,9 @@ $red: #FE7070;
         justify-content: center;
         align-items: center;
         border-radius: 0px 5px 5px 0px;
+        svg {
+          @include transition(0.3s);
+        }
       }
     }
   }
@@ -892,16 +955,16 @@ $red: #FE7070;
             padding: 15px;
             border-radius: 8px;
             border: 1px solid rgba($navy, 0.3);
-            transition: .3s ease-in-out;
-            -moz-transition: .3s ease-in-out;
-            -o-transition: .3s ease-in-out;
-            -webkit-transition: .3s ease-in-out;
+            transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            -webkit-transition: 0.3s ease-in-out;
             &:focus {
               outline: none;
-              -moz-transition: .3s ease-in-out;
-              -o-transition: .3s ease-in-out;
-              -webkit-transition: .3s ease-in-out;
-              transition: .3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              -webkit-transition: 0.3s ease-in-out;
+              transition: 0.3s ease-in-out;
               border: 1px solid $navy;
             }
           }
@@ -914,16 +977,16 @@ $red: #FE7070;
             padding: 15px;
             border-radius: 8px;
             border: 1px solid rgba($navy, 0.3);
-            transition: .3s ease-in-out;
-            -moz-transition: .3s ease-in-out;
-            -o-transition: .3s ease-in-out;
-            -webkit-transition: .3s ease-in-out;
+            transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            -webkit-transition: 0.3s ease-in-out;
             &:focus {
               outline: none;
-              -moz-transition: .3s ease-in-out;
-              -o-transition: .3s ease-in-out;
-              -webkit-transition: .3s ease-in-out;
-              transition: .3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              -webkit-transition: 0.3s ease-in-out;
+              transition: 0.3s ease-in-out;
               border: 1px solid $navy;
             }
           }
@@ -937,16 +1000,16 @@ $red: #FE7070;
             border-radius: 8px;
             border: 1px solid rgba($navy, 0.3);
             resize: none;
-            transition: .3s ease-in-out;
-            -moz-transition: .3s ease-in-out;
-            -o-transition: .3s ease-in-out;
-            -webkit-transition: .3s ease-in-out;
+            transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            -webkit-transition: 0.3s ease-in-out;
             &:focus {
               outline: none;
-              -moz-transition: .3s ease-in-out;
-              -o-transition: .3s ease-in-out;
-              -webkit-transition: .3s ease-in-out;
-              transition: .3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              -webkit-transition: 0.3s ease-in-out;
+              transition: 0.3s ease-in-out;
               border: 1px solid $navy;
             }
           }
@@ -1014,7 +1077,6 @@ $red: #FE7070;
               align-items: center;
               border-radius: 0px 5px 5px 0px;
             }
-
           }
         }
       }
@@ -1092,48 +1154,27 @@ $red: #FE7070;
 }
 
 .fillHeader {
-  transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out;
-  -o-transition: .3s ease-in-out;
-  -webkit-transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
   background-color: #fff;
-  box-shadow:
-          0 2.3px 1.9px rgba(0, 0, 0, 0.01),
-          0 5.4px 4.3px rgba(0, 0, 0, 0.015),
-          0 9.7px 7.7px rgba(0, 0, 0, 0.018),
-          0 16.1px 12.8px rgba(0, 0, 0, 0.022),
-          0 26.5px 21.2px rgba(0, 0, 0, 0.025),
-          0 46.2px 37px rgba(0, 0, 0, 0.03),
-          0 100px 80px rgba(0, 0, 0, 0.04)
-;
-  -moz-box-shadow:
-          0 2.3px 1.9px rgba(0, 0, 0, 0.01),
-          0 5.4px 4.3px rgba(0, 0, 0, 0.015),
-          0 9.7px 7.7px rgba(0, 0, 0, 0.018),
-          0 16.1px 12.8px rgba(0, 0, 0, 0.022),
-          0 26.5px 21.2px rgba(0, 0, 0, 0.025),
-          0 46.2px 37px rgba(0, 0, 0, 0.03),
-          0 100px 80px rgba(0, 0, 0, 0.04)
-;
-  -webkit-box-shadow:
-          0 2.3px 1.9px rgba(0, 0, 0, 0.01),
-          0 5.4px 4.3px rgba(0, 0, 0, 0.015),
-          0 9.7px 7.7px rgba(0, 0, 0, 0.018),
-          0 16.1px 12.8px rgba(0, 0, 0, 0.022),
-          0 26.5px 21.2px rgba(0, 0, 0, 0.025),
-          0 46.2px 37px rgba(0, 0, 0, 0.03),
-          0 100px 80px rgba(0, 0, 0, 0.04)
-;
-  -o-box-shadow:
-          0 2.3px 1.9px rgba(0, 0, 0, 0.01),
-          0 5.4px 4.3px rgba(0, 0, 0, 0.015),
-          0 9.7px 7.7px rgba(0, 0, 0, 0.018),
-          0 16.1px 12.8px rgba(0, 0, 0, 0.022),
-          0 26.5px 21.2px rgba(0, 0, 0, 0.025),
-          0 46.2px 37px rgba(0, 0, 0, 0.03),
-          0 100px 80px rgba(0, 0, 0, 0.04)
-;
-
+  box-shadow: 0 2.3px 1.9px rgba(0, 0, 0, 0.01),
+    0 5.4px 4.3px rgba(0, 0, 0, 0.015), 0 9.7px 7.7px rgba(0, 0, 0, 0.018),
+    0 16.1px 12.8px rgba(0, 0, 0, 0.022), 0 26.5px 21.2px rgba(0, 0, 0, 0.025),
+    0 46.2px 37px rgba(0, 0, 0, 0.03), 0 100px 80px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0 2.3px 1.9px rgba(0, 0, 0, 0.01),
+    0 5.4px 4.3px rgba(0, 0, 0, 0.015), 0 9.7px 7.7px rgba(0, 0, 0, 0.018),
+    0 16.1px 12.8px rgba(0, 0, 0, 0.022), 0 26.5px 21.2px rgba(0, 0, 0, 0.025),
+    0 46.2px 37px rgba(0, 0, 0, 0.03), 0 100px 80px rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0 2.3px 1.9px rgba(0, 0, 0, 0.01),
+    0 5.4px 4.3px rgba(0, 0, 0, 0.015), 0 9.7px 7.7px rgba(0, 0, 0, 0.018),
+    0 16.1px 12.8px rgba(0, 0, 0, 0.022), 0 26.5px 21.2px rgba(0, 0, 0, 0.025),
+    0 46.2px 37px rgba(0, 0, 0, 0.03), 0 100px 80px rgba(0, 0, 0, 0.04);
+  -o-box-shadow: 0 2.3px 1.9px rgba(0, 0, 0, 0.01),
+    0 5.4px 4.3px rgba(0, 0, 0, 0.015), 0 9.7px 7.7px rgba(0, 0, 0, 0.018),
+    0 16.1px 12.8px rgba(0, 0, 0, 0.022), 0 26.5px 21.2px rgba(0, 0, 0, 0.025),
+    0 46.2px 37px rgba(0, 0, 0, 0.03), 0 100px 80px rgba(0, 0, 0, 0.04);
 }
 .changeBtn {
   border: 1px solid $navy;

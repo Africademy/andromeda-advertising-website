@@ -25,7 +25,7 @@ class Services extends Component {
                     <NotificationAds />
                     <GameAds />
                 </section>
-                <section className="services__action">
+                <section id="trigger-testimonials" className="services__action">
                 <h2 className="services__action__title">Create your campaign with few steps</h2>
                 <p className="services__action__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam semper dui eget sem rhoncus, nec rutrum tortor aliquam.</p>
                 <button className="services__action__btn">Get started<span>

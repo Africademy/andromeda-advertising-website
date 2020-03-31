@@ -124,3 +124,36 @@ $red: #FE7070;
     }
   }
 }
+
+.loggedin {
+  width: 30vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  padding: 10vw 0vw 10vw;
+  align-items: center;
+  &__text {
+    &__title {
+      font-size: 40pt;
+    }
+    &__description {
+      font-size: 16pt;
+    }
+  }
+  &__btn {
+    padding: 20px 40px 20px;
+    font-size: 13pt;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: $blue;
+    color: #fff;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+
+    }
+  }
+}
