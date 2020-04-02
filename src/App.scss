@@ -44,6 +44,12 @@ $red: #fe7070;
     @include transition(0.3s);
 
     &__logo {
+      border: none;
+      background: none;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
       &__name {
         font-size: 13pt;
         font-weight: 600;
@@ -490,16 +496,96 @@ $red: #fe7070;
       &:hover > &__btn {
         visibility: visible;
       }
+      &:hover > svg > #Warstwa_2 > #louder > #louder-outline {
+        fill: #e2e2e2;
+      }
+      &:hover > svg > #Warstwa_2 > #louder-banner > #louder-banner__outline {
+        fill: #e2e2e2;
+      }
+      &:hover > svg > #Warstwa_2 > #louder-video > #louder-video__outline {
+        fill: #e2e2e2;
+      }
+      &:hover > svg > #Warstwa_2 > #louder-ebook > #louder-ebook__outline {
+        fill: #e2e2e2;
+      }
+      &:hover > svg > #Warstwa_2 > #louder-push > #add__bg {
+        fill: #e2e2e2;
+      }
+      &:hover > svg > #Warstwa_2 > #louder-game > #louder-game__outline {
+        fill: #e2e2e2;
+      }
+
+      svg {
+        position: relative;
+        left: 0.5vw;
+
+        #Warstwa_2 {
+          #base {
+            rect {
+              fill: rgba($navy, 0.5);
+            }
+          }
+          #louder {
+            position: absolute;
+            #louder-outline {
+            }
+            #louder-icon {
+              fill: rgba($navy, 0.5) !important;
+            }
+          }
+          #louder-banner {
+            &__outline {
+              fill: #fff;
+            }
+            &__icon {
+              fill: rgba($navy, 0.5) !important;
+            }
+          }
+          #louder-video {
+            &__icon {
+              fill: rgba($navy, 0.5);
+            }
+          }
+          #louder-ebook {
+            &__icon {
+              fill: rgba($navy, 0.5) !important;
+            }
+          }
+          #louder-push {
+            #bell-main {
+              fill: rgba($navy, 0.5) !important;
+            }
+            #bell-small {
+              fill: rgba($navy, 0.5) !important;
+            }
+            #add__outline {
+              fill: #fff;
+            }
+            #add__bg {
+              fill: rgba($navy, 0.5) !important;
+            }
+          }
+          #louder-game {
+            #gamepad {
+              fill: rgba($navy, 0.5);
+            }
+            &__outline {
+              fill: #fff;
+            }
+            &__icon {
+              fill: rgba($navy, 0.5);
+            }
+          }
+        }
+      }
 
       &__title {
         font-size: 23pt;
       }
 
       &__icon {
-        height: 120px;
-        width: 80px;
-        border-radius: 20px;
-        background-color: $navy;
+        height: 130px;
+        width: 130px;
       }
       &__btn {
         @include styleBtn;
@@ -635,13 +721,24 @@ $red: #fe7070;
       justify-content: space-between;
       -webkit-flex-flow: column;
       padding: 3vw 0vw 0vw;
-      &__title {
-        font-size: 24pt;
-      }
-      &__description {
-        color: $navy;
-        font-size: 13pt;
-        line-height: 22pt;
+      &__slideshow {
+        display: flex;
+        width: 100%;
+        overflow-x: scroll;
+        position: relative;
+
+        &__slide {
+          min-width: 100%;
+          &__title {
+            font-size: 24pt;
+          }
+
+          &__description {
+            color: $navy;
+            font-size: 13pt;
+            line-height: 22pt;
+          }
+        }
       }
     }
   }

@@ -1,7 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import { Link } from "react-router-dom";
+import animejs from "animejs/lib/anime.es";
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isMenuOpen: false,
+    }
+    this.nav = createRef(null);
+  }
+
   componentDidMount() {
     const header = document.querySelector(".hero__header");
     const loginBtn = document.querySelector(".hero__header__btn");
@@ -15,14 +24,35 @@ class Header extends Component {
       }
     });
   }
+  handleMenu = () => {
+    if(this.state.isMenuOpen === false) {
+      animejs({
+        targets: '.hero__header__nav',
+        translateX: ['100vw', 0],
+        easing: 'linear',
+        duration: 100,
+      })
+      this.setState({isMenuOpen: !this.state.isMenuOpen});
+    } else {
+      animejs({
+        targets: '.hero__header__nav',
+        translateX: [0, '100vw'],
+        easing: 'linear',
+        duration: 100,
+      })
+      this.setState({isMenuOpen: !this.state.isMenuOpen});
+    }
+  }
 
   render() {
     return (
       <header className="hero__header">
-        <div className="hero__header__logo">
-          <h2 className="hero__header__logo__name">Andromeda</h2>
-        </div>
-        <nav className="hero__header__nav">
+        <Link to="/">
+          <button className="hero__header__logo">
+            <h2 className="hero__header__logo__name">Andromeda</h2>
+          </button>
+        </Link>
+        <nav ref={this.nav} className="hero__header__nav">
           <button className="hero__header__nav__btn">
             <li className="hero__header__nav__btn__item">Advertisers</li>
             <ul className="hero__header__nav__btn__item__dropdown">
@@ -43,13 +73,13 @@ class Header extends Component {
           <button className="hero__header__nav__btn">
             <li className="hero__header__nav__btn__item">Resources</li>
           </button>
-          <Link to='/help' >
+          <Link to="/help">
             <button className="hero__header__nav__btn">
               <li className="hero__header__nav__btn__item">Help</li>
             </button>
           </Link>
         </nav>
-        <button className="hero__header__burger">
+        <button onClick={this.handleMenu} className="hero__header__burger">
           <svg
             width={30}
             viewBox="0 0 24 24"
@@ -78,7 +108,7 @@ class Header extends Component {
             </g>
           </svg>
         </button>
-        <Link to="/login">
+        <Link id='loginBtn' to="/login">
           <button className="hero__header__btn">Login</button>
         </Link>
       </header>

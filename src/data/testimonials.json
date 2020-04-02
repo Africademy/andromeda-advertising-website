@@ -1,0 +1,20 @@
+[
+  {
+    "key": 1,
+    "content": "According to statistics, over 80% of creators and creative companies across the world decided to trust our service",
+    "author": {
+      "name": "John Smith",
+      "position": "CEO",
+      "company": "Crew Inc."
+    }
+  },
+  {
+    "key": 2,
+    "content": "According to statistics, over 80% of creators and creative companies across the world decided to trust our service",
+    "author": {
+      "name": "Jack White",
+      "position": "Co-Owner",
+      "company": "Skew Industries"
+    }
+  }
+]

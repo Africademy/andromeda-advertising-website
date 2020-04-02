@@ -26,9 +26,7 @@ const LoginForm = ({
         className="login__right__form"
       >
         <h1 className="login__right__form__title">
-          Become
-          <br />
-          our client
+          Become our client
         </h1>
         <section className="login__right__form__input">
           <label htmlFor="email">E-mail address</label>
