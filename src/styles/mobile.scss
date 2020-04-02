@@ -6,7 +6,7 @@
   -moz-box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+$blue: #3663f5;
 $black: #2C2B38;
 $navy: #3B3F5F;
 
@@ -23,7 +23,7 @@ $navy: #3B3F5F;
           font-size: 16pt;
         }
       }
-      &__nav {
+      &__nav-section {
         position: absolute;
         right: 0;
         top: 0;
@@ -35,22 +35,36 @@ $navy: #3B3F5F;
         width: 100vw;
         padding: 30vw 0vw 20vw;
         transform: translateX(100vw);
-        &__btn {
-          &:focus {
-            outline: none;
-          }
-          &__item {
-            font-size: 20pt;
-            &__dropdown {
-              position: relative;
-              background: none;
-              box-shadow: none;
-              padding: 0vw 0vw 10vw;
-            }
+        a {
+          .hero__header__btn {
+            font-size: 16pt;
+            width: 70vw;
+            color: #fff;
+            background-color: $blue;
+            height: 70px;
           }
         }
-        a {
-          text-align: center;
+        &__nav {
+          flex-flow: column;
+          &__btn {
+            &:focus {
+              outline: none;
+            }
+
+            &__item {
+              font-size: 20pt;
+
+              &__dropdown {
+                position: relative;
+                background: none;
+                box-shadow: none;
+                padding: 0vw 0vw 10vw;
+              }
+            }
+          }
+          a {
+            text-align: center;
+          }
         }
       }
       &__burger {
@@ -59,10 +73,6 @@ $navy: #3B3F5F;
         &:focus {
           outline: aqua;
         }
-
-      }
-      &__btn {
-        display: none;
       }
     }
     &__welcome {

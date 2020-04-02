@@ -1,0 +1,329 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+$blue: #3663f5;
+$black: #2c2b38;
+$navy: #3b3f5f;
+$red: #fe7070;
+
+@media screen and (min-width: 500px) and (max-width: 899px) {
+  .hero {
+    &__header {
+      &__nav-section {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-flow: column;
+        background-color: #fff;
+        min-height: 100vh;
+        height: auto;
+        width: 100vw;
+        padding: 30vw 0vw 20vw;
+        transform: translateX(100vw);
+        &__nav {
+          flex-flow: column;
+          &__btn {
+            &:focus {
+              outline: none;
+            }
+            &__item {
+              font-size: 20pt;
+              &__dropdown {
+                position: relative;
+                background: none;
+                box-shadow: none;
+                padding: 0vw 0vw 10vw;
+              }
+            }
+          }
+        }
+        a {
+          text-align: center;
+        }
+      }
+      &__burger {
+        display: flex;
+        z-index: 50;
+        border: none;
+        background: none;
+        &:focus {
+          outline: aqua;
+        }
+      }
+      a {
+        &__btn {
+          font-size: 14pt;
+        }
+      }
+    }
+    &__welcome {
+      flex-flow: column;
+      -webkit-flex-flow: column;
+      &__empty {
+        width: 100%;
+        height: 60%;
+      }
+      &__text {
+        left: 10vw;
+        padding: 0vh 0vh 0vh;
+        height: 45%;
+        bottom: 40vh;
+        width: 80%;
+        &__title {
+          font-size: 50pt;
+        }
+        &__btn {
+          width: 45%;
+        }
+      }
+      &__image {
+        width: 100%;
+        height: 50vh;
+      }
+    }
+  }
+  .clients {
+    &__title {
+      padding: 5vw 0vw 0vw;
+    }
+    &__list {
+      overflow-x: scroll;
+      &__item {
+        margin: 0px 10vw 0vw 2vw;
+      }
+    }
+  }
+
+  .aboutus {
+    &__element {
+      width: 80%;
+      height: 80vh;
+      flex-flow: column;
+      &__image {
+        width: 100%;
+        height: 40vh;
+        img {
+          width: inherit;
+        }
+        &--second {
+          width: 100vw;
+          height: 40vh;
+          img {
+            width: 100%;
+          }
+        }
+        &--third {
+          width: 100%;
+          height: 40vh;
+          img {
+            width: 100%;
+            object-position: center;
+          }
+        }
+      }
+      &__content {
+        width: 100%;
+        height: 40vh;
+        &__description {
+          width: 100%;
+        }
+      }
+      &:nth-child(even) {
+        flex-flow: column;
+        height: 85vh;
+        width: 80%;
+      }
+    }
+  }
+
+  .services {
+    height: auto;
+    &__list {
+      grid-template-columns: 40vw 40vw;
+      grid-template-rows: 60vh 60vh 60vh;
+      &__item {
+        width: 100%;
+      }
+    }
+    &__action {
+      height: 45vh;
+      &__description {
+        width: 80%;
+      }
+      &__btn {
+        width: 25vw;
+      }
+    }
+  }
+  //TODO: add rwd to testimonials and contact
+  .testimonials {
+    height: 100vh;
+    padding: 10vw 5vw 10vw;
+    &__element {
+      height: 100%;
+      flex-flow: column;
+      justify-content: space-between;
+      &__image {
+        width: 100%;
+        img {
+          object-position: 0 -10vw;
+        }
+      }
+      &__content {
+        width: 100%;
+        &__slideshow {
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+  .hero {
+    &__header {
+      &__nav {
+        width: 60%;
+      }
+    }
+
+    &__welcome {
+      &__text {
+        left: 10vw;
+        &__btn {
+          width: 40%;
+        }
+      }
+    }
+  }
+
+  .clients {
+    &__list {
+      width: 80%;
+    }
+  }
+
+  .aboutus {
+    &__element {
+      width: 90%;
+      &__image {
+        width: 35vw;
+
+        &--second {
+          width: 35vw;
+
+          img {
+            object-position: -35vw;
+          }
+        }
+        &--third {
+          width: 35vw;
+        }
+      }
+      &__content {
+        &__btn {
+          width: 50%;
+
+          &--second {
+            width: 65%;
+          }
+        }
+      }
+    }
+  }
+
+  .services {
+    &__list {
+      grid-template-columns: 30vw 30vw 30vw;
+      &__item {
+        width: 100%;
+      }
+    }
+    &__action {
+      &__btn {
+        width: 20vw;
+      }
+    }
+  }
+  .testimonials {
+    &__element {
+      width: 90%;
+
+      &__image {
+        width: 35vw;
+      }
+    }
+  }
+
+  .excellence {
+    &__numbers {
+      height: 40%;
+
+      &__first-column {
+        width: 40vw;
+        &__purple {
+          width: 25vw;
+          height: 25vw;
+          &__main {
+            &__title {
+              font-size: 14pt;
+            }
+          }
+        }
+        &__blue {
+          width: 40vw;
+          height: 25vw;
+        }
+      }
+      &__last-column {
+        width: 25vw;
+
+        &__navy {
+          width: 100%;
+          height: 25vw;
+        }
+        &__red {
+          width: 100%;
+          height: 35vw;
+        }
+      }
+    }
+    &__action {
+      &__btn {
+        width: 25vw;
+      }
+    }
+  }
+
+  .contact {
+    height: 210vh;
+    &__form-and-map {
+      flex-flow: column;
+      padding: 0vw 5vw 0vw;
+      &__map {
+        width: 80%;
+        height: 50vh;
+      }
+      &__form {
+        width: 80%;
+        height: 100vh;
+        &__inputs {
+          &__btn {
+            width: 30%;
+            &--notActive {
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

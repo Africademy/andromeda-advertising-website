@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.scss";
 import "./styles/mobile.scss";
+import './styles/rwd.scss';
 
 function App() {
   return (

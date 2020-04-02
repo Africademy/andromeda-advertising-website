@@ -55,84 +55,95 @@ $red: #fe7070;
         font-weight: 600;
       }
     }
-    &__nav {
+    &__nav-section {
       display: flex;
       justify-content: space-between;
-      width: 50%;
+      align-items: center;
+      width: 75%;
       height: 100%;
-      &__btn {
-        border: none;
-        background: none;
-        cursor: pointer;
-        height: 100%;
-        @include transition(0.3s);
-        &:after {
-          content: "";
-          display: block;
-          width: 0%;
-          height: 2px;
-          background-color: $navy;
+      transform: translateX(0);
+
+      &__nav {
+        width: 40vw;
+        height: inherit;
+        display: flex;
+        justify-content: space-between;
+        &__btn {
+          border: none;
+          background: none;
+          cursor: pointer;
+          height: 100%;
           @include transition(0.3s);
-        }
-        &:hover {
           &:after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            background-color: $navy;
             @include transition(0.3s);
-            width: 100%;
           }
-        }
-        &:hover > ul {
-          display: block;
-        }
-
-        &__item {
-          list-style-type: none;
-          font-size: 12pt;
-          position: relative;
-
-          &__dropdown {
-            display: none;
-            position: absolute;
-            top: 4vw;
-            text-align: left;
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 15px 0px 15px;
-            box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
-              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
-              0 2.1px 10px rgba(0, 0, 0, 0.015),
-              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
-              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
-              0 17px 80px rgba(0, 0, 0, 0.03);
-            -moz-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
-              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
-              0 2.1px 10px rgba(0, 0, 0, 0.015),
-              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
-              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
-              0 17px 80px rgba(0, 0, 0, 0.03);
-            -o-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
-              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
-              0 2.1px 10px rgba(0, 0, 0, 0.015),
-              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
-              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
-              0 17px 80px rgba(0, 0, 0, 0.03);
-            -webkit-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
-              0 1.1px 5.3px rgba(0, 0, 0, 0.012),
-              0 2.1px 10px rgba(0, 0, 0, 0.015),
-              0 3.8px 17.9px rgba(0, 0, 0, 0.018),
-              0 7.1px 33.4px rgba(0, 0, 0, 0.022),
-              0 17px 80px rgba(0, 0, 0, 0.03);
-
-            li {
-              list-style-type: none;
-              line-height: 28pt;
-              font-size: 12pt;
-              padding: 5px 15px 5px;
+          &:focus {
+            outline: none;
+          }
+          &:hover {
+            &:after {
               @include transition(0.3s);
-              &:hover {
-                color: $blue;
-                font-weight: 500;
-                transform: translateX(5px);
+              width: 100%;
+            }
+          }
+          &:hover > ul {
+            display: block;
+          }
+
+          &__item {
+            list-style-type: none;
+            font-size: 12pt;
+            position: relative;
+
+            &__dropdown {
+              display: none;
+              position: absolute;
+              top: 4vw;
+              text-align: left;
+              background-color: #fff;
+              border-radius: 5px;
+              padding: 15px 0px 15px;
+              box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+                0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+                0 2.1px 10px rgba(0, 0, 0, 0.015),
+                0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+                0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+                0 17px 80px rgba(0, 0, 0, 0.03);
+              -moz-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+                0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+                0 2.1px 10px rgba(0, 0, 0, 0.015),
+                0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+                0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+                0 17px 80px rgba(0, 0, 0, 0.03);
+              -o-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+                0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+                0 2.1px 10px rgba(0, 0, 0, 0.015),
+                0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+                0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+                0 17px 80px rgba(0, 0, 0, 0.03);
+              -webkit-box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.008),
+                0 1.1px 5.3px rgba(0, 0, 0, 0.012),
+                0 2.1px 10px rgba(0, 0, 0, 0.015),
+                0 3.8px 17.9px rgba(0, 0, 0, 0.018),
+                0 7.1px 33.4px rgba(0, 0, 0, 0.022),
+                0 17px 80px rgba(0, 0, 0, 0.03);
+              li {
+                list-style-type: none;
+                line-height: 28pt;
+                font-size: 12pt;
+                padding: 5px 15px 5px;
                 @include transition(0.3s);
+                &:hover {
+                  color: $blue;
+                  font-weight: 500;
+                  transform: translateX(5px);
+                  @include transition(0.3s);
+                }
               }
             }
           }
@@ -514,10 +525,15 @@ $red: #fe7070;
       &:hover > svg > #Warstwa_2 > #louder-game > #louder-game__outline {
         fill: #e2e2e2;
       }
+      &:hover > svg {
+        @include transition(0.3s);
+        transform: scale(1.1);
+      }
 
       svg {
         position: relative;
         left: 0.5vw;
+        @include transition(0.3s);
 
         #Warstwa_2 {
           #base {
@@ -577,6 +593,9 @@ $red: #fe7070;
             }
           }
         }
+      }
+      &:hover > svg > #Warstwa_2 > #base {
+        background-color: $blue;
       }
 
       &__title {
