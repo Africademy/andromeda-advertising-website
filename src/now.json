@@ -1,0 +1,9 @@
+{
+  "build": {
+    "env": {
+      "API_KEY": "@api-key",
+      "CMS_KEY": "@cms-key",
+      "SPACE_ID": "@space-id"
+    }
+  }
+}
