@@ -80,9 +80,10 @@ $red: #fe7070;
         width: 80%;
         &__title {
           font-size: 50pt;
+          line-height: 55pt;
         }
         &__btn {
-          width: 45%;
+          width: 80%;
         }
       }
       &__image {
@@ -184,6 +185,36 @@ $red: #fe7070;
         }
       }
     }
+  }
+  .blog {
+    height: auto;
+    padding: 15vw 5vw 0vw;
+    &__header {
+      flex-flow: column;
+      align-items: flex-start;
+      &__input {
+        width: 100%;
+      }
+    }
+    &__posts {
+      display: flex;
+      flex-flow: column;
+      &__post {
+        margin: 0vw 0vw 5vw;
+        &__details {
+          padding: 3vw;
+        }
+      }
+    }
+  }
+  #reactModal {
+    width: 90vw !important;
+    margin-left: -45vw !important;
+    margin-top: 10vw !important;
+    height: 80vh !important;
+  }
+  .gobackBtn {
+    font-size: 14pt;
   }
 }
 
@@ -325,5 +356,45 @@ $red: #fe7070;
         }
       }
     }
+  }
+
+  .blog {
+    &__header {
+      &__input {
+        width: 30vw;
+      }
+    }
+    &__posts {
+      display: flex;
+      flex-flow: column;
+      &__post {
+        height: 50vh;
+        margin: 0vw 0vw 5vw;
+        &__image {
+          height: 55%;
+          img {
+            height: 100%;
+          }
+        }
+        &__details {
+          height: 45%;
+        }
+      }
+    }
+  }
+  #reactModal {
+    width: 80vw !important;
+    margin-left: -40vw !important;
+    top: 10vw !important;
+    height: 75vh !important;
+  }
+  .modal-content {
+    height: auto !important;
+  }
+  .title {
+    margin: 0vw 0vw 2vw !important;
+  }
+  .content {
+    margin: 0vw 0vw 2vw !important;
   }
 }

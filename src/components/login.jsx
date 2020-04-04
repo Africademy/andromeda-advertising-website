@@ -17,7 +17,6 @@ class Login extends Component {
   };
   componentDidMount() {
     //anime illustration enter
-    const cap = document.querySelector("#Graduation_cap");
     anime({
       targets: ".login__left svg",
       translateX: ["-30vw", 0],

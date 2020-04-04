@@ -74,6 +74,10 @@ $red: #fe7070;
           cursor: pointer;
           height: 100%;
           @include transition(0.3s);
+          a {
+            text-decoration: none;
+            color: #000;
+          }
           &:after {
             content: "";
             display: block;
@@ -519,7 +523,7 @@ $red: #fe7070;
       &:hover > svg > #Warstwa_2 > #louder-ebook > #louder-ebook__outline {
         fill: #e2e2e2;
       }
-      &:hover > svg > #Warstwa_2 > #louder-push > #add__bg {
+      &:hover > svg > #Warstwa_2 > #louder-push > #add__outline {
         fill: #e2e2e2;
       }
       &:hover > svg > #Warstwa_2 > #louder-game > #louder-game__outline {
@@ -1294,4 +1298,31 @@ $red: #fe7070;
 }
 .changeBtn {
   border: 1px solid $navy;
+}
+
+.empty {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    margin: 0vw 0vw 5vw;
+  }
+  &__btn {
+    @include styleBtn();
+    font-size: 12pt;
+    padding: 15px 35px 15px;
+    border-radius: 5px;
+    border: 1px solid $navy;
+    cursor: pointer;
+    @include transition(0.3s);
+
+    &:hover {
+      @include transition(0.3s);
+      background-color: $navy;
+      color: #fff;
+    }
+  }
 }

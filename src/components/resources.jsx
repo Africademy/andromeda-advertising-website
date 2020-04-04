@@ -1,7 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Help = () => {
+const Resources = () => {
   return (
     <main className="empty">
       <h2 className="empty__title">This page is currently unavailable</h2>
@@ -12,4 +12,4 @@ const Help = () => {
   );
 };
 
-export default Help;
+export default Resources;

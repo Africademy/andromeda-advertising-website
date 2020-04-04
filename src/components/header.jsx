@@ -13,7 +13,6 @@ class Header extends Component {
     };
     this.nav = createRef(null);
     this.dropdown = createRef(null);
-    console.log(this.state.isMenuOpen);
   }
 
   componentDidMount() {
@@ -28,7 +27,6 @@ class Header extends Component {
         loginBtn.classList.remove("changeBtn");
       }
     });
-    console.log(this.state.isMenuOpen);
   }
   handleMenu = () => {
     if (this.state.isMenuOpen === false) {
@@ -77,9 +75,11 @@ class Header extends Component {
               onFocus={true}
               className="hero__header__nav-section__nav__btn"
             >
-              <li className="hero__header__nav-section__nav__btn__item">
-                Advertisers
-              </li>
+              <Link to="/advertisers">
+                <li className="hero__header__nav-section__nav__btn__item">
+                  Advertisers
+                </li>
+              </Link>
               <ul
                 ref={this.dropdown}
                 className="hero__header__nav-section__nav__btn__item__dropdown"
@@ -89,26 +89,34 @@ class Header extends Component {
                 <li>Our recommendations</li>
               </ul>
             </button>
-            <button className="hero__header__nav-section__nav__btn">
-              <li className="hero__header__nav-section__nav__btn__item">
-                Publishers
-              </li>
-            </button>
-            <button className="hero__header__nav-section__nav__btn">
-              <li className="hero__header__nav-section__nav__btn__item">
-                Company
-              </li>
-            </button>
-            <button className="hero__header__nav-section__nav__btn">
-              <li className="hero__header__nav-section__nav__btn__item">
-                Blog
-              </li>
-            </button>
+            <Link to="/publishers">
+              <button className="hero__header__nav-section__nav__btn">
+                <li className="hero__header__nav-section__nav__btn__item">
+                  Publishers
+                </li>
+              </button>
+            </Link>
+            <Link to="/company">
+              <button className="hero__header__nav-section__nav__btn">
+                <li className="hero__header__nav-section__nav__btn__item">
+                  Company
+                </li>
+              </button>
+            </Link>
+            <Link to="/blog">
+              <button className="hero__header__nav-section__nav__btn">
+                <li className="hero__header__nav-section__nav__btn__item">
+                  Blog
+                </li>
+              </button>
+            </Link>
+            <Link to='/resources' >
             <button className="hero__header__nav-section__nav__btn">
               <li className="hero__header__nav-section__nav__btn__item">
                 Resources
               </li>
             </button>
+            </Link>
             <Link to="/help">
               <button className="hero__header__nav-section__nav__btn">
                 <li className="hero__header__nav-section__nav__btn__item">

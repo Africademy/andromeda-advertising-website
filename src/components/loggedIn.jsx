@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import anime from "animejs/lib/anime.es";
 
 const LoggedIn = () => {
   return (

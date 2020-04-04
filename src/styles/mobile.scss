@@ -1,4 +1,6 @@
-*, :before, :after {
+*,
+:before,
+:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,8 +9,8 @@
   font-family: "Poppins", sans-serif;
 }
 $blue: #3663f5;
-$black: #2C2B38;
-$navy: #3B3F5F;
+$black: #2c2b38;
+$navy: #3b3f5f;
 
 @media screen and (max-width: 500px) {
   .hero {
@@ -103,14 +105,12 @@ $navy: #3B3F5F;
         &__btn {
           width: 75%;
         }
-
       }
       &__image {
         height: 44%;
         width: 100%;
         align-self: flex-end;
       }
-
     }
   }
   .clients {
@@ -128,10 +128,8 @@ $navy: #3B3F5F;
       &__item {
         width: 90%;
         margin: 0px 50px 0px;
-
       }
     }
-
   }
   .aboutus {
     &__element {
@@ -230,7 +228,6 @@ $navy: #3B3F5F;
         height: 70vh;
         padding: 20vw 5vw 20vw;
         border-bottom: 1px solid rgba($black, 0.5);
-
       }
     }
     &__action {
@@ -246,7 +243,6 @@ $navy: #3B3F5F;
         width: 80%;
         height: 80px;
         font-size: 18pt;
-
       }
     }
   }
@@ -496,5 +492,66 @@ $navy: #3B3F5F;
         }
       }
     }
+  }
+
+  .blog {
+    padding: 30vw 5vw 0vw;
+    height: auto;
+
+    &__header {
+      flex-flow: column;
+      align-items: flex-start;
+      &__head {
+        font-size: 40pt;
+      }
+      &__input {
+        width: 100%;
+        border: 1px solid $navy;
+      }
+    }
+    &__posts {
+      display: flex;
+      flex-flow: column;
+
+      &__post {
+        margin: 0vw 0vw 5vw;
+        height: auto;
+        &__image {
+          height: 45%;
+        }
+        &__details {
+          height: auto;
+          padding: 20px;
+          &__title {
+            font-size: 22pt;
+            margin: 0vw 0vw 3vw;
+          }
+          &__content {
+            margin: 0vw 0vw 2vw;
+          }
+        }
+      }
+    }
+  }
+
+  #reactModal {
+    width: 90vw !important;
+    margin-left: -45vw !important;
+    top: 25vw !important;
+    height: 80vh !important;
+  }
+  .modal-content {
+    padding: 3vw;
+  }
+  .title {
+    font-size: 30pt;
+    margin: 0vw 0vw 8vw;
+  }
+  .content {
+    margin: 0vw 0vw 6vw;
+  }
+  .gobackBtn {
+    background: none;
+    font-size: 14pt;
   }
 }

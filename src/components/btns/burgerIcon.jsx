@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import anime from "animejs/lib/anime.es";
 
 const BurgerIcon = (props) => {
-    const [isMenuOpen, setMenu] = useState(props.isMenuOpen);
+    const [isMenuOpen] = useState(props.isMenuOpen);
 
     useEffect(() => {
         anime({
